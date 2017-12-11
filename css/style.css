@@ -5,3 +5,11 @@ body
   text-align: center;
 	background-size: cover;
 }
+div#gameBoard {
+ background:#DADADA;
+ border:#999 1px solid;
+ width: 800px;
+ height: 540px;
+ padding: 24px;
+ margin: 0px auto;
+}
