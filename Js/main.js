@@ -3,3 +3,13 @@ const color = ['#ffce00','#ffce00', '#0099ff','#0099ff','#191995','#191995','#ff
 let memoryValues = [];
 let memoryId = [];
 let flippedTile= 0;
+
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
