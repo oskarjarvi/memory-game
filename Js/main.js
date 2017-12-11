@@ -13,3 +13,78 @@ function shuffle(a) {
     a[j] = x;
   }
 }
+function setGame()
+{
+  flippedTile= 0;
+  let output= '';
+  shuffle(color);
+  color.forEach(function(memory_array_value, index)
+  {
+ output += '<div id="tile_'+ index +'" onclick="memoryFlipTile(this,\''+ memory_array_value +'\')"></div>';
+ });
+  document.getElementById('gameBoard').innerHTML = output;
+}
+function canFlipCard(tile)
+ {
+ return tile.innerHTML == "" && memory_values.length < 2;
+}
+function flipCard(tile, value)
+{
+ tile.style.background = color[i];
+ tile.innerHTML = value;
+}
+function areNoCardsFlipped()
+{
+ return memoryValues.length == 0;
+}
+function isOneCardFlipped()
+{
+ return memoryValues.length == 1
+}
+function setCardAsFlipped(tile, value){
+
+if(memory_values.length == 0)
+{
+ memory_values.push(val);
+ memory_tile_ids.push(tile.id);
+}
+function isThereIsAMatch()
+{
+ return memory_values[0] == memory_values[1];
+}
+
+function matchCards()
+{
+ tiles_flipped += 2;
+ memory_values = [];
+ memory_tile_ids = [];
+}
+function memoryFlipTile(tile, value)
+{
+ if (canFlipCard(tile))
+ {
+   flipCard(tile, value);
+   if (areNoCardsFlipped())
+   {
+     setCardAsFlipped(tile, value);
+   }
+   else if(isOneCardFlipped())
+   {
+     setCardAsFlipped(tile, value);
+       if(isThereIsAMatch())
+       {
+         matchCards();
+         if (isGameOver())
+         {
+           gameIsOver();
+         }
+       }
+       else
+       {
+         cardsDoNotMatch();
+       }
+     }
+   }
+ }
+
+setGame();
