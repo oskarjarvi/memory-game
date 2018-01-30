@@ -18,16 +18,6 @@ function shuffle(a)
     a[j] = x;
   }
 }
-function setGame()
-{
-  flippedTile= 0;
-  let output= '';
-  shuffle(color);
-  color.forEach(function(memory_array_value, index)
-  {
- output += '<div id="tile_'+ index +'" onclick="memoryFlipTile(this,\''+ memory_array_value +'\')"></div>';
- });
-  document.getElementById('gameBoard').innerHTML = output;
 }
 function canFlipCard(tile)
  {
