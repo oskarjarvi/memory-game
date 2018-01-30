@@ -32,8 +32,34 @@ function createAllCards(){
     createCard(color, index);
   });
 }
+function createCard(color,index){
+
+  let li = document.createElement('li');
+  li.classList.add('flip-container');
+
+
+  let flipper = document.createElement('div');
+  flipper.classList.add('flipper');
+
+  li.appendChild(flipper);
+
+  let front = document.createElement('div');
+  front.classList.add('front');
+
+  flipper.appendChild(front);
+
+  let back = document.createElement('div');
+  back.classList.add('back');
+
+  back.style.backgroundColor = colors[index];
+
+  flipper.appendChild(back);
+
+  li.addEventListener('click', onClick);
+
+  output.appendChild(li);
+  let cards = document.querySelectorAll('.flip-container');
 }
-function areNoCardsFlipped()
 {
  return memoryValues.length == 0;
 }
