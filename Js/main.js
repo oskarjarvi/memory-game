@@ -80,8 +80,32 @@ function onClick(event)
 function checkCard(card)
 {
 
+  if(firstCard == null)
+  {
+    firstCard = card;
+  }
+  else
+  {
+    if(card.querySelector('.back').style.backgroundColor == firstCard.querySelector('.back').style.backgroundColor)
+    {
+      matchedCards.push(card);
+      matchedCards.push(firstCard);
+      card.removeEventListener('click', onClick);
+      firstCard.removeEventListener('click', onClick);
+      firstCard = null;
+      flippedCards = [];
+    }
+    else
+    {
+      setTimeout(() => {
+        card.classList.remove('flip');
+        firstCard.classList.remove('flip');
+        firstCard = null;
+        flippedCards = [];
+      },500 );
+    }
+  }
 }
-function isThereIsAMatch()
 {
  return memory_values[0] == memory_values[1];
 }
