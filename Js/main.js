@@ -111,11 +111,13 @@ reset.addEventListener('click', e =>
   restart();
 });
 
-function matchCards()
+function restart()
 {
- tiles_flipped += 2;
- memory_values = [];
- memory_tile_ids = [];
+  document.querySelectorAll('.flip-container').forEach(elmnt => { elmnt.remove() });
+  matchedCards = [];
+  flippedCards = [];
+  color = shuffle(colors);
+  createAllCards();
 }
 function memoryFlipTile(tile, value)
 {
