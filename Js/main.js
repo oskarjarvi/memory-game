@@ -65,9 +65,18 @@ document.body.appendChild(gameboard);
 
 function onClick(event)
 {
- return memoryValues.length == 0;
+  let target = event.target;
+  if(!target.classList.contains('flip'))
+  {
+    if (flippedCards.length < 2)
+    {
+      let target =   findAncestor(event.target, 'flip-container');
+      target.classList.add('flip');
+      flippedCards.push(target);
+      checkCard(target);
+    }
+  }
 }
-function isOneCardFlipped()
 {
  return memoryValues.length == 1
 }
