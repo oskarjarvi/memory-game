@@ -8,7 +8,8 @@ gameboard.classList.add('Board');
 let output = document.createElement('ol');
 const reset = document.querySelector('.reset');
 
-function shuffle(a) {
+function shuffle(a)
+{
   var j, x, i;
   for (i = a.length - 1; i > 0; i--) {
     j = Math.floor(Math.random() * (i + 1));
