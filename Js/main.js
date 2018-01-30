@@ -106,9 +106,10 @@ function checkCard(card)
     }
   }
 }
+reset.addEventListener('click', e =>
 {
- return memory_values[0] == memory_values[1];
-}
+  restart();
+});
 
 function matchCards()
 {
