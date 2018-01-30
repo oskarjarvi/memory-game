@@ -119,3 +119,4 @@ function restart()
   color = shuffle(colors);
   createAllCards();
 }
+createAllCards();
