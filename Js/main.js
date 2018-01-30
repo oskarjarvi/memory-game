@@ -77,15 +77,9 @@ function onClick(event)
     }
   }
 }
+function checkCard(card)
 {
- return memoryValues.length == 1
-}
-function setCardAsFlipped(tile, value){
 
-if(memory_values.length == 0)
-{
- memory_values.push(val);
- memory_tile_ids.push(tile.id);
 }
 function isThereIsAMatch()
 {
