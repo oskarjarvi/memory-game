@@ -32,10 +32,6 @@ function createAllCards(){
     createCard(color, index);
   });
 }
-function flipCard(tile, value)
-{
- tile.style.background = color[i];
- tile.innerHTML = value;
 }
 function areNoCardsFlipped()
 {
