@@ -60,6 +60,10 @@ function createCard(color,index){
   output.appendChild(li);
   let cards = document.querySelectorAll('.flip-container');
 }
+gameboard.appendChild(output);
+document.body.appendChild(gameboard);
+
+function onClick(event)
 {
  return memoryValues.length == 0;
 }
