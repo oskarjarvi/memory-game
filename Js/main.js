@@ -18,10 +18,13 @@ function shuffle(a)
     a[j] = x;
   }
 }
+
+color = shuffle(colors);
+
+function findAncestor (el, cls) {
+  while ((el = el.parentElement) && !el.classList.contains(cls));
+  return el;
 }
-function canFlipCard(tile)
- {
- return tile.innerHTML == "" && memory_values.length < 2;
 }
 function flipCard(tile, value)
 {
