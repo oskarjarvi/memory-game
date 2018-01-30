@@ -119,32 +119,3 @@ function restart()
   color = shuffle(colors);
   createAllCards();
 }
-function memoryFlipTile(tile, value)
-{
- if (canFlipCard(tile))
- {
-   flipCard(tile, value);
-   if (areNoCardsFlipped())
-   {
-     setCardAsFlipped(tile, value);
-   }
-   else if(isOneCardFlipped())
-   {
-     setCardAsFlipped(tile, value);
-       if(isThereIsAMatch())
-       {
-         matchCards();
-         if (isGameOver())
-         {
-           gameIsOver();
-         }
-       }
-       else
-       {
-         cardsDoNotMatch();
-       }
-     }
-   }
- }
-
-setGame();
