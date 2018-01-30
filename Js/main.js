@@ -3,6 +3,10 @@ let matchedCards = [];
 let firstCard = null;
 let flippedCards = [];
 
+let gameboard = document.createElement('div');
+gameboard.classList.add('Board');
+let output = document.createElement('ol');
+const reset = document.querySelector('.reset');
 
 function shuffle(a) {
   var j, x, i;
