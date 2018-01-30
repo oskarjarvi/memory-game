@@ -25,6 +25,12 @@ function findAncestor (el, cls) {
   while ((el = el.parentElement) && !el.classList.contains(cls));
   return el;
 }
+
+function createAllCards(){
+  colors.forEach(function (color, index)
+  {
+    createCard(color, index);
+  });
 }
 function flipCard(tile, value)
 {
